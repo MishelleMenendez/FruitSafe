@@ -4,7 +4,7 @@
       <div class="card border-0 shadow-lg bg-transparent rounded d-flex flex-row wow animate__animated animate__fadeInUp">
         <div class="col-md-6 d-none d-lg-block p-0 position-relative">
           <div class="image-container wow animate__animated animate__fadeInLeft" data-wow-delay="0.3s">
-            <img src="assets/naranjas.jpg" class="img-fluid fruta-image" alt="Frutas">
+            <img src="assets/naranjas.jpg" class="img-fluid fruta-image" alt="Una imagen de naranjas frescas">
             <div class="overlay wow animate__animated animate__fadeIn" data-wow-delay="0.6s">
               <div class="overlay-text">
                 <h5 class="card-title text-center mb-4 text-light">FRUITSAFE</h5>
@@ -16,25 +16,27 @@
         <div class="col-md-6">
           <div class="card-body p-5 wow animate__animated animate__fadeInRight" data-wow-delay="0.6s">
             <h5 class="card-title text-center mb-4 text-light">¡Bienvenido!</h5>
-            <form (ngSubmit)="logIn()">
+            <form (ngSubmit)="logIn()" aria-labelledby="login-form">
               <div class="form-group mb-3 position-relative">
+                <label for="email" class="sr-only">Correo electrónico</label>
                 <i class="fas fa-user icon"></i>
-                <input type="email" class="form-control form-control-lg" id="email" placeholder="Correo electrónico" name="email" [(ngModel)]="email">    
+                <input type="email" class="form-control form-control-lg" id="email" placeholder="Correo electrónico" name="email" [(ngModel)]="email" required aria-required="true" aria-label="Correo electrónico">    
               </div>
               <div class="form-group mb-3 position-relative">
+                <label for="password" class="sr-only">Contraseña</label>
                 <i class="fas fa-lock icon"></i>
-                <input [type]="passwordFieldType" class="form-control form-control-lg" id="password" placeholder="Contraseña" name="password" [(ngModel)]="password">
-                <i class="fas" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()"></i>
+                <input [type]="passwordFieldType" class="form-control form-control-lg" id="password" placeholder="Contraseña" name="password" [(ngModel)]="password" required aria-required="true" aria-label="Contraseña">
+                <i class="fas" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" aria-label="Mostrar/ocultar contraseña"></i>
               </div>
-              <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+              <div *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
                 {{ errorMessage }}
               </div>
-              <button type="submit" class="btn btn-lg w-100" [disabled]="isSubmitting">Iniciar sesión</button>
+              <button type="submit" class="btn btn-lg w-100" [disabled]="isSubmitting" aria-label="Iniciar sesión">Iniciar sesión</button>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <img src="assets/fondologin.jpg" alt="Fruits" class="hero-image wow animate__animated animate__fadeIn" data-wow-delay="0.9s">
+  <img src="assets/fondologin.jpg" alt="Fondo de inicio de sesión con frutas" class="hero-image wow animate__animated animate__fadeIn" data-wow-delay="0.9s">
 </div>

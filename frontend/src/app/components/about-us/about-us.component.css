@@ -1,86 +1,115 @@
 .about-us {
-    padding: 100px 0;
-    background-color: #f9f9f9; /* Fondo claro */
+  padding: 100px 0;
+  background-color: #f9f9f9; /* Fondo claro */
+}
+
+.about-us img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de la imagen */
+}
+
+.about-us h1, .about-us h2 {
+  color: #75a624; /* Verde */
+  text-align: center;
+  margin-bottom: 30px; /* Espacio adicional debajo de los encabezados */
+  font-weight: bold;
+}
+
+.about-us p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: justify;
+  color: #333; /* Texto más oscuro para mejor legibilidad */
+  margin-bottom: 20px; /* Espacio adicional debajo de los párrafos */
+}
+
+.about-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-us ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.about-us ul li i {
+  color: #fc8710; /* Naranja para los íconos de verificación */
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
+/* Animaciones WOW.js */
+.wow {
+  visibility: hidden;
+}
+
+.animated {
+  visibility: visible !important;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
   }
-  
-  .about-us img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de la imagen */
+
+  to {
+    opacity: 1;
+    transform: none;
   }
-  
-  .about-us h1, .about-us h2 {
-    color: #75a624; /* Verde */
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
-  
-  .about-us p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    text-align: justify;
-    color: #333; /* Texto más oscuro para mejor legibilidad */
+
+  to {
+    opacity: 1;
+    transform: none;
   }
-  
-  .about-us ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .about-us ul li {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .about-us ul li i {
-    color: #fc8710; /* Naranja para los íconos de verificación */
-    margin-right: 10px;
-    font-size: 1.5em;
-  }
-  
-  /* Animaciones WOW.js */
+}
+
+/* Estilo para los enlaces de salto */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
+}
+
+/* Desactivar animaciones para usuarios con preferencia por reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
   .wow {
-    visibility: hidden;
+    animation: none;
   }
-  
-  .animated {
-    visibility: visible !important;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-  }
-  
-  .fadeInLeft {
-    animation-name: fadeInLeft;
-  }
-  
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  
-  .fadeInUp {
-    animation-name: fadeInUp;
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  
+}

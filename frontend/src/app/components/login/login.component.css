@@ -4,17 +4,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 .container {
     max-width: 1100px; /* Ancho del contenedor más grande */
-}
-
-.background-image {
-    background-size: cover;
-    height: 100%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
 }
 
 .card {
@@ -100,7 +94,6 @@ body {
     font-size: 1.2em;
 }
 
-/* Nuevas reglas para la imagen y el efecto hover */
 .image-container {
     position: relative;
     width: 100%;
@@ -126,7 +119,7 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    background: rgb(223 133 16 / 48%);
+    background: rgba(223, 133, 16, 0.48);
     color: white;
     font-weight: 600;
     text-align: center;
@@ -147,5 +140,34 @@ body {
 @media (max-width: 768px) {
     .col-lg-10 {
         display: block; /* Asegura que el contenedor se muestre en pantallas pequeñas */
+    }
+}
+
+/* Estilos de accesibilidad adicionales */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    overflow: visible;
+}
+
+/* Desactivar animaciones para usuarios con preferencia por reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .wow {
+        animation: none;
     }
 }

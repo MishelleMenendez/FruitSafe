@@ -1,15 +1,86 @@
+.hero {
+  position: relative;
+  background: url('/assets/fruit.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  padding: 100px 0; /* Espacio en la sección */
+  overflow: hidden; /* Para asegurar que el contenido no se desborde */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero .green {
+  color: #75a624; /* Verde */
+}
+
+.hero .orange {
+  color: #fc8710; /* Naranja */
+}
+
+.hero-text {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
 .btn {
-    background-color: #fc8710; /* Naranja */
-    color: #fff;
-    padding: 10px 40px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block; /* Para que el botón no ocupe todo el ancho del contenedor */
-    margin-top: 20px; /* Espacio entre el párrafo y el botón */
-    font-size: 1.5em; /* Tamaño de letra igual al de "FRUIT SAFE" */
+  background-color: #fc8710; /* Naranja */
+  color: #fff;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho del contenedor */
+  margin-top: 20px; /* Espacio entre el párrafo y el botón */
+  font-size: 1.5em; /* Tamaño de letra igual al de "FRUIT SAFE" */
+  transition: background-color 0.3s ease; /* Transición suave para el hover */
 }
 
 .btn:hover {
-    background-color: #75a624; /* Verde al pasar el ratón */
+  background-color: #75a624; /* Verde al pasar el ratón */
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 20px;
+}
+
+/* Estilo para los enlaces de salto */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
+}
+
+/* Desactivar animaciones para usuarios con preferencia por reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .wow {
+    animation: none;
+  }
 }

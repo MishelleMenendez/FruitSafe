@@ -21,6 +21,35 @@
     display: flex;
     align-items: baseline;
 }
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacio entre los elementos del menú */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.5em; /* Tamaño de la letra */
+    font-weight: bold;
+    color: #333; /* Color del texto */
+    transition: color 0.3s ease; /* Transición de color */
+}
+
+nav ul li a:hover {
+    color: #fc8710; /* Color al pasar el ratón */
+}
+
 @media (max-width: 768px) {
     header {
         position: relative; /* Cambia la posición del header a relative en dispositivos pequeños */
@@ -50,5 +79,18 @@
 
     nav ul li a {
         font-size: 1.2em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+}
+
+/* Estilos de accesibilidad adicionales */
+a:focus {
+    outline: 2px solid #fc8710; /* Bordes visibles en el enfoque para accesibilidad */
+    outline-offset: 4px;
+}
+
+/* Desactivar animaciones para usuarios con preferencia por reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .wow {
+        animation: none;
     }
 }
