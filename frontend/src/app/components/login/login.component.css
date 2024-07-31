@@ -1,15 +1,151 @@
+body {
+    background: linear-gradient(135deg, #ffdd00, #fbb034); /* Fondo degradado */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1100px; /* Ancho del contenedor más grande */
+}
+
+.background-image {
+    background-size: cover;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Fondo difuminado */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    display: flex;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    color: #fff;
+}
+
+.card-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border: 2px solid #ddd;
+    border-radius: 10px; /* Bordes redondeados en los campos del formulario */
+    padding: 15px;
+    padding-left: 40px; /* Espacio para el ícono */
+    font-size: 1.1em;
+    transition: border-color 0.3s ease; /* Transición suave en el borde */
+}
+
+.form-control:focus {
+    border-color: #fc8710; /* Color del borde al enfocar */
+    box-shadow: 0 0 10px rgba(252, 135, 16, 0.2); /* Sombra al enfocar */
+}
+
 .btn {
     background-color: #fc8710; /* Naranja */
     color: #fff;
-    padding: 10px 40px;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 10px;
     font-weight: bold;
-    display: inline-block; /* Para que el botón no ocupe todo el ancho del contenedor */
-    margin-top: 20px; /* Espacio entre el párrafo y el botón */
-    font-size: 1.5em; /* Tamaño de letra igual al de "FRUIT SAFE" */
+    margin-top: 20px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
 }
 
 .btn:hover {
     background-color: #75a624; /* Verde al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+.alert {
+    border-radius: 10px; /* Bordes redondeados en el mensaje de alerta */
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem; /* Espacio debajo de cada grupo de formulario */
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 15px; /* Ajustar la posición del ícono */
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.2em;
+    pointer-events: none; /* Para evitar que el ícono sea interactivo */
+    transition: opacity 0.3s ease;
+}
+
+.fa-eye, .fa-eye-slash {
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Ajusta la posición del ícono de visibilidad */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 1.2em;
+}
+
+/* Nuevas reglas para la imagen y el efecto hover */
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.fruta-image {
+    display: block;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .fruta-image {
+    opacity: 0.3;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background: rgb(223 133 16 / 48%);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .col-lg-10 {
+        display: block; /* Asegura que el contenedor se muestre en pantallas pequeñas */
+    }
 }

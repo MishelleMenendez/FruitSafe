@@ -8,7 +8,7 @@ body {
 header {
     position: fixed;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+    background-color: rgb(255 255 255 / 50%); /* Fondo semitransparente */
     padding: 10px 0;
     z-index: 1000;
     top: 0;
@@ -86,4 +86,34 @@ nav ul li a {
     line-height: 1.6; /* Espacio entre líneas más amplio */
     text-align: justify; /* Justifica el texto */
 }
+@media (max-width: 768px) {
+    header {
+        position: relative; /* Cambia la posición del header a relative en dispositivos pequeños */
+        padding: 20px 0; /* Ajusta el padding para pantallas pequeñas */
+    }
 
+    .main-content {
+        margin-top: 0; /* Elimina el margen superior del contenido principal en pantallas pequeñas */
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px; /* Asegúrate de que haya espacio suficiente para no superponerse */
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 1.2em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+}

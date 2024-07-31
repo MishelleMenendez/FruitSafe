@@ -14,6 +14,7 @@ export class UpdateInfoComponent implements OnInit {
   infoForm: FormGroup;
   addInfoForm: FormGroup;
   showModal: boolean = false;
+  showDeleteModal: boolean = false; // Añadido para el nuevo modal de eliminación
 
   constructor(private fb: FormBuilder, private infoService: InfoService) {
     this.infoForm = this.fb.group({
@@ -70,11 +71,24 @@ export class UpdateInfoComponent implements OnInit {
   }
 
   onDeleteInfo(id: string): void {
-    this.infoService.deleteInfo(id).subscribe(() => {
-      this.getInfos();
-    }, error => {
-      console.error('Error deleting info', error);
-    });
+    // Mostrar el modal de confirmación de eliminación
+    this.selectedInfo = this.infos.find(info => info._id === id) || null;
+    this.showDeleteModal = true;
+  }
+
+  closeDeleteModal(): void {
+    this.showDeleteModal = false;
+  }
+
+  confirmDelete(): void {
+    if (this.selectedInfo) {
+      this.infoService.deleteInfo(this.selectedInfo._id).subscribe(() => {
+        this.getInfos();
+        this.closeDeleteModal(); // Ocultar el modal de confirmación después de la eliminación
+      }, error => {
+        console.error('Error deleting info', error);
+      });
+    }
   }
 
   onAddInfo(): void {

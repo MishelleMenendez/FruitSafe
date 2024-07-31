@@ -21,3 +21,34 @@
     display: flex;
     align-items: baseline;
 }
+@media (max-width: 768px) {
+    header {
+        position: relative; /* Cambia la posición del header a relative en dispositivos pequeños */
+        padding: 20px 0; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .main-content {
+        margin-top: 0; /* Elimina el margen superior del contenido principal en pantallas pequeñas */
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px; /* Asegúrate de que haya espacio suficiente para no superponerse */
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 1.2em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+}

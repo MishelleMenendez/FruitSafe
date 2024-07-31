@@ -3,7 +3,6 @@ import { UserLogin } from "../../models/userLogin";
 import { LoginService } from "../../services/login.service";
 import { AuthService } from "../../services/auth.service";
 import { Router } from "@angular/router";
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,6 +14,7 @@ export class LoginComponent implements OnInit {
   password: string = "";
   errorMessage: string = ""; // Variable para almacenar el mensaje de error
   isSubmitting: boolean = false; // Variable para controlar el estado de envío
+  passwordFieldType: string = 'password'; // Para controlar el tipo del campo de contraseña
 
   constructor(
     private loginService: LoginService,
@@ -55,5 +55,9 @@ export class LoginComponent implements OnInit {
         console.error('Log In failed:', error);
       }
     );
+  }
+
+  togglePasswordVisibility(): void {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 }

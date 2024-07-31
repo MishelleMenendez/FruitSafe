@@ -1,0 +1,28 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+
+# Angular build output
+dist/
+tmp/
+
+# Compiled JavaScript files
+*.js
+*.d.ts
+*.js.map
+
+# Typescript compiled output
+*.tsbuildinfo
+
+# Misc
+.DS_Store
+
+# Environment variables
+.env
+src/firebase_account/serviceAccount.json
